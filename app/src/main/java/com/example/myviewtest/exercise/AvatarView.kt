@@ -5,10 +5,10 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import com.example.myviewtest.R
-import com.example.myviewtest.test.utils.px
+import com.example.myviewtest.test.utils.dp
 
-private val IMAGE_WIDTH = 200f.px
-private val IMAGE_PADDING = 20f.px
+private val IMAGE_WIDTH = 200f.dp
+private val IMAGE_PADDING = 20f.dp
 private val X_FERMODE = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
 class AvatarView(context: Context, attributeSet: AttributeSet) : View(context, attributeSet) {
 

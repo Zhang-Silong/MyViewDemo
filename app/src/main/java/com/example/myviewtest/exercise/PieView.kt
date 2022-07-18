@@ -6,13 +6,13 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
-import com.example.myviewtest.test.utils.px
+import com.example.myviewtest.test.utils.dp
 import kotlin.math.cos
 import kotlin.math.sin
 
-private val RADIUS = 150f.px
+private val RADIUS = 150f.dp
 private val ANGLE = floatArrayOf(60f, 90f, 150f, 60f)
-private val OFFSET_LENGTH = 20f.px
+private val OFFSET_LENGTH = 20f.dp
 private val COLORS = intArrayOf(
     Color.parseColor("#C21858"),
     Color.parseColor("#00ACC1"),
@@ -23,7 +23,7 @@ class PieView(context: Context, attributeSet: AttributeSet) : View(context, attr
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     init {
-        paint.strokeWidth = 3f.px
+        paint.strokeWidth = 3f.dp
     }
 
 

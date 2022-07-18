@@ -4,15 +4,15 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
-import com.example.myviewtest.test.utils.px
+import com.example.myviewtest.test.utils.dp
 import kotlin.math.cos
 import kotlin.math.sin
 
 private const val OPEN_ANGLE = 120f
-private val DASH_WIDTH = 2f.px
-private val DASH_LENGTH = 10f.px
-private val RADIUS = 150f.px
-private val LENGTH = 120f.px
+private val DASH_WIDTH = 2f.dp
+private val DASH_LENGTH = 10f.dp
+private val RADIUS = 150f.dp
+private val LENGTH = 120f.dp
 class DashboardView(context: Context, attributeSet: AttributeSet) : View(context, attributeSet) {
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -21,7 +21,7 @@ class DashboardView(context: Context, attributeSet: AttributeSet) : View(context
     private lateinit var pathEffect: PathEffect
 
     init {
-        paint.strokeWidth = 3f.px
+        paint.strokeWidth = 3f.dp
         paint.style = Paint.Style.STROKE
         dash.addRect(0f, 0f, DASH_WIDTH, DASH_LENGTH, Path.Direction.CCW)
     }
