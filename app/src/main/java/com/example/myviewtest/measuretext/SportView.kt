@@ -1,4 +1,4 @@
-package com.example.myviewtest.exercise
+package com.example.myviewtest.measuretext
 
 import android.content.Context
 import android.graphics.Canvas
@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 import com.example.myviewtest.test.utils.dp
 
@@ -21,6 +22,7 @@ class SportView(context: Context, attributeSet: AttributeSet) : View(context, at
     }
 
     private val bounds = Rect()
+    private val fontMetrics = Paint.FontMetrics()
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
@@ -36,11 +38,23 @@ class SportView(context: Context, attributeSet: AttributeSet) : View(context, at
         canvas.drawArc(width / 2f - RADIUS, height / 2f - RADIUS, width / 2f + RADIUS,
             height / 2f + RADIUS, -90f, 225f, false, paint)
 
-        //绘制文字
+        //绘制文字(Center)
         paint.style = Paint.Style.FILL
-        paint.getTextBounds("90km", 0, "90km".length, bounds)
+
+        //静态文字
+        /*paint.getTextBounds("90km", 0, "90km".length, bounds)
+        //偏移量
         val offset = (bounds.top + bounds.bottom) / 2f
-        canvas.drawText("90km", width / 2f, height / 2f - offset, paint)
+        canvas.drawText("90km", width / 2f, height / 2f - offset, paint)*/
+
+        //动态文字
+        paint.getFontMetrics(fontMetrics)
+        canvas.drawText("aaqeQA", width / 2f, height / 2f - (fontMetrics.ascent + fontMetrics.descent) / 2f, paint)
+
+        //绘制文字(Left)
+        paint.textAlign = Paint.Align.LEFT
+        paint.getFontMetrics(fontMetrics)
+        canvas.drawText("aaqeQA", 0f, - fontMetrics.top, paint)
     }
 
 
