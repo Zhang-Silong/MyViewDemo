@@ -27,6 +27,7 @@ class MultilineTextView(context: Context, attrs: AttributeSet) : View(context, a
 
     private val textPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
         textSize = 16.dp
+        //textAlign = Paint.Align.LEFT
     }
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {

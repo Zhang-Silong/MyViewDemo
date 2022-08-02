@@ -42,19 +42,20 @@ class SportView(context: Context, attributeSet: AttributeSet) : View(context, at
         paint.style = Paint.Style.FILL
 
         //静态文字
-        /*paint.getTextBounds("90km", 0, "90km".length, bounds)
+        paint.getTextBounds("90kmAq", 0, "90kmAq".length, bounds)
         //偏移量
         val offset = (bounds.top + bounds.bottom) / 2f
-        canvas.drawText("90km", width / 2f, height / 2f - offset, paint)*/
+        canvas.drawText("90kmAq", width / 2f, height / 2f - offset
+            , paint)
 
-        //动态文字
+        /*//动态文字
         paint.getFontMetrics(fontMetrics)
         canvas.drawText("aaqeQA", width / 2f, height / 2f - (fontMetrics.ascent + fontMetrics.descent) / 2f, paint)
 
         //绘制文字(Left)
         paint.textAlign = Paint.Align.LEFT
         paint.getFontMetrics(fontMetrics)
-        canvas.drawText("aaqeQA", 0f, - fontMetrics.top, paint)
+        canvas.drawText("aaqeQA", 0f, - fontMetrics.top, paint)*/
     }
 
 
