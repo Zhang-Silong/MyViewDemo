@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    tools:context=".ui.activity.MainActivity">
 
 
-    <!--<com.example.myviewtest.propertyanimator.CircleView
+    <!--<com.example.myviewtest.view.propertyanimator.CircleView
         android:id="@+id/circleView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

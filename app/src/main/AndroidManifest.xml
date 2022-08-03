@@ -14,13 +14,13 @@
         android:theme="@style/Theme.MyViewTest"
         tools:targetApi="31" >
         <activity
-            android:name=".activity.CircleViewActivity"
+            android:name="com.example.myviewtest.ui.activity.AnimatorActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.PropertyAnimatorActivity"
+            android:name="com.example.myviewtest.ui.activity.PropertyAnimatorActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name="com.example.myviewtest.ui.activity.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

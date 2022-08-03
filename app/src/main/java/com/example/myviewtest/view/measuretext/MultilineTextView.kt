@@ -1,16 +1,15 @@
-package com.example.myviewtest.measuretext
+package com.example.myviewtest.view.measuretext
 
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Paint
-import android.text.StaticLayout
 import android.text.TextPaint
 import android.util.AttributeSet
 import android.view.View
 import com.example.myviewtest.R
-import com.example.myviewtest.test.utils.dp
+import com.example.myviewtest.view.test.utils.dp
 
 private val IMAGE_SIZE = 150.dp
 private val IMAGE_PADDING = 50.dp

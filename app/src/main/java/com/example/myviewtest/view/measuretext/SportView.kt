@@ -1,4 +1,4 @@
-package com.example.myviewtest.measuretext
+package com.example.myviewtest.view.measuretext
 
 import android.content.Context
 import android.graphics.Canvas
@@ -6,9 +6,8 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
-import com.example.myviewtest.test.utils.dp
+import com.example.myviewtest.view.test.utils.dp
 
 private val CIRCLE_COLOR = Color.parseColor("#90A4AE")
 private val HIGHLIGHT_COLOR = Color.parseColor("#FF4081")

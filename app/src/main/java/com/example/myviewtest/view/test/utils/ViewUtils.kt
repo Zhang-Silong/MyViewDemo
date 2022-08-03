@@ -1,4 +1,4 @@
-package com.example.myviewtest.test.utils
+package com.example.myviewtest.view.test.utils
 
 import android.content.Context
 import android.content.res.Resources

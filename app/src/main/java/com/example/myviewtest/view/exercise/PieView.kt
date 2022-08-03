@@ -1,4 +1,4 @@
-package com.example.myviewtest.exercise
+package com.example.myviewtest.view.exercise
 
 import android.content.Context
 import android.graphics.Canvas
@@ -6,7 +6,7 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
-import com.example.myviewtest.test.utils.dp
+import com.example.myviewtest.view.test.utils.dp
 import kotlin.math.cos
 import kotlin.math.sin
 

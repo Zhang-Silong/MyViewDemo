@@ -1,4 +1,4 @@
-package com.example.myviewtest.clip
+package com.example.myviewtest.view.clip
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -8,7 +8,7 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 import com.example.myviewtest.R
-import com.example.myviewtest.test.utils.dp
+import com.example.myviewtest.view.test.utils.dp
 
 private val BITMAP_SIZE = 200.dp
 private val BITMAP_PADDING = 100.dp

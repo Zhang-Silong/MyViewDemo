@@ -1,4 +1,4 @@
-package com.example.myviewtest.test
+package com.example.myviewtest.view.test
 
 import android.content.Context
 import android.graphics.Canvas
@@ -8,7 +8,7 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 
-import com.example.myviewtest.test.utils.dp
+import com.example.myviewtest.view.test.utils.dp
 
 class TestView(context: Context, attributeSet: AttributeSet) : View(context, attributeSet) {
 

@@ -1,11 +1,11 @@
-package com.example.myviewtest.exercise
+package com.example.myviewtest.view.exercise
 
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import com.example.myviewtest.R
-import com.example.myviewtest.test.utils.dp
+import com.example.myviewtest.view.test.utils.dp
 
 private val IMAGE_WIDTH = 200f.dp
 private val IMAGE_PADDING = 20f.dp
