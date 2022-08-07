@@ -94,10 +94,14 @@ class ContentFragment : Fragment() {
             }
             R.layout.point_view -> {
                 val pointView = view?.findViewById<PointView>(R.id.pointView)
-                ObjectAnimator.ofObject(pointView, "point", PointEvaluator(), PointF(100.dp, 200.dp)).apply {
+                val t = ObjectAnimator.ofObject(pointView, "point", PointEvaluator(), PointF(100.dp, 200.dp)).apply {
                     startDelay = 1000
                     duration = 2000
                     start()
+                }
+                view?.setOnClickListener {
+                    t.reverse()
+                    t.cancel()
                 }
             }
             R.layout.province_view -> {
