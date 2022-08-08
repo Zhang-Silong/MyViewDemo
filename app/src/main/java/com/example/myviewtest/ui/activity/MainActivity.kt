@@ -3,6 +3,9 @@ package com.example.myviewtest.ui.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import com.example.myviewtest.R
 import com.example.myviewtest.databinding.ActivityMainBinding
 
 
@@ -31,6 +34,7 @@ class MainActivity : AppCompatActivity() {
             startDelay = 1000
             start()
         }*/
+        
 
     }
 }

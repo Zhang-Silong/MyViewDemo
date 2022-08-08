@@ -2,6 +2,8 @@ package com.example.myviewtest.view.propertyanimator
 
 import android.animation.TypeEvaluator
 import android.graphics.PointF
+import android.util.Log
+import com.example.myviewtest.view.test.utils.dp
 
 class PointEvaluator : TypeEvaluator<PointF> {
 
@@ -12,6 +14,7 @@ class PointEvaluator : TypeEvaluator<PointF> {
     ): PointF {
         val startX = startValue.x
         val endX = endValue.x
+        Log.d("PointEvaluator", "x:$startX,y:$endX,start:${100.dp}, end:$endValue")
         val currentX = startX + (endX - startX) * fraction
 
         val startY = startValue.y

@@ -1,9 +1,9 @@
 package com.example.myviewtest.ui.fragment
 
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
+import android.animation.*
 import android.graphics.PointF
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,12 +12,21 @@ import com.example.myviewtest.R
 import com.example.myviewtest.view.propertyanimator.*
 import com.example.myviewtest.view.test.utils.dp
 
-val provinceList = listOf("北京市", "上海市", "天津市", "重庆市","河北省", "山西省", "辽宁省",
+val provinceList = listOf(
+    "北京市", "上海市", "天津市", "重庆市", "河北省", "山西省", "辽宁省",
     "吉林省", "黑龙江省", "江苏省", "浙江省", "安徽省", "香港特别行政区", "北京市", "上海市", "天津市", "重庆市",
-    "河北省", "山西省", "辽宁省", "吉林省", "黑龙江省", "江苏省", "浙江省", "安徽省", "澳门特别行政区")
+    "河北省", "山西省", "辽宁省", "吉林省", "黑龙江省", "江苏省", "浙江省", "安徽省", "澳门特别行政区"
+)
+
 class ContentFragment : Fragment() {
 
     private var viewId: Int? = null
+
+    private lateinit var test: ObjectAnimator
+
+    private var v: View? = null
+
+    private var isFirst = true
 
     companion object {
         fun newInstance(id: Int): ContentFragment {
@@ -32,6 +41,7 @@ class ContentFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewId = arguments?.getInt("view_id")
+
     }
 
     override fun onCreateView(
@@ -65,6 +75,7 @@ class ContentFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        Log.d("ContentFragment", "onResume")
         when (viewId) {
             R.layout.circle_view -> {
                 val circleView = view?.findViewById<CircleView>(R.id.circleView)
@@ -75,14 +86,16 @@ class ContentFragment : Fragment() {
             }
             R.layout.camera_view -> {
                 val cameraView = view?.findViewById<CameraAnimatorView>(R.id.cameraView)
-                val bottomFlipAnimator = ObjectAnimator.ofFloat(cameraView, "bottomFlip", 60f).apply {
-                    startDelay = 1000
-                    duration = 1000
-                }
-                val flipRotationAnimator = ObjectAnimator.ofFloat(cameraView, "flipRotation", 270f).apply {
-                    startDelay = 200
-                    duration = 1000
-                }
+                val bottomFlipAnimator =
+                    ObjectAnimator.ofFloat(cameraView, "bottomFlip", 60f).apply {
+                        startDelay = 1000
+                        duration = 1000
+                    }
+                val flipRotationAnimator =
+                    ObjectAnimator.ofFloat(cameraView, "flipRotation", 270f).apply {
+                        startDelay = 200
+                        duration = 1000
+                    }
                 val topFlipAnimator = ObjectAnimator.ofFloat(cameraView, "topFlip", -60f).apply {
                     startDelay = 200
                     duration = 1000
@@ -94,23 +107,47 @@ class ContentFragment : Fragment() {
             }
             R.layout.point_view -> {
                 val pointView = view?.findViewById<PointView>(R.id.pointView)
-                ObjectAnimator.ofObject(pointView, "point", PointEvaluator(), PointF(100.dp, 200.dp)).apply {
+                ObjectAnimator.ofObject(
+                    pointView,
+                    "point",
+                    PointEvaluator(),
+                    PointF(0.dp, 0.dp),
+                    PointF(100.dp, 200.dp)
+                ).apply {
                     startDelay = 1000
                     duration = 2000
                     start()
                 }
             }
             R.layout.province_view -> {
+                Log.d("ContentFragment", "ProvinceView")
                 val provinceView = view?.findViewById<ProvinceView>(R.id.provinceView)
-                ObjectAnimator.ofObject(provinceView, "province", ProvinceEvaluator(), "澳门特别行政区").apply {
+                test = ObjectAnimator.ofObject(
+                    provinceView,
+                    "province",
+                    ProvinceEvaluator(),
+                    "北京市",
+                    "澳门特别行政区"
+                ).apply {
                     startDelay = 1000
                     duration = 10000
                     start()
                 }
             }
-            else -> {}
         }
     }
+
+
+
+
+override fun onPause() {
+    super.onPause()
+    //Log.d("ContentFragment", "onPause")
+    if (viewId == R.layout.province_view) {
+        test.pause()
+        isFirst = false
+    }
+}
 
 
 }
