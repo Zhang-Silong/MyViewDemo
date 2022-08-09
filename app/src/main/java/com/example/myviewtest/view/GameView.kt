@@ -117,6 +117,11 @@ class GameView(context: Context, attrs: AttributeSet) : View(context, attrs) {
             }
         }
         path1.close()
+        bgPaint.shader = LinearGradient(width / 2f - 66.dp, height / 2f + 20.dp - one,
+            width / 2f - 66.dp + 6 * widthX, height / 2f + 20.dp,
+            Color.parseColor("#E91E63"),
+            Color.parseColor("#eeeeee"), Shader.TileMode.CLAMP
+        )
         canvas.drawPath(path, pathPaint)
         canvas.drawPath(path1, bgPaint)
 
