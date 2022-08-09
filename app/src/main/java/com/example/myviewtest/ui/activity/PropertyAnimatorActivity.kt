@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.myviewtest.databinding.ActivityPropertyAnimatorBinding
+import com.example.myviewtest.view.TestActivity
 import java.util.ArrayList
 
 class PropertyAnimatorActivity : AppCompatActivity() {
@@ -22,7 +23,7 @@ class PropertyAnimatorActivity : AppCompatActivity() {
             }
         }
         propertyAnimatorBinding.avatarViewBtn.setOnClickListener {
-
+            startActivity(Intent(this, TestActivity::class.java))
         }
     }
 
