@@ -13,10 +13,22 @@ class TestActivity : AppCompatActivity() {
 
         val gameView = findViewById<GameView>(R.id.gameView)
         val change = findViewById<Button>(R.id.change)
-
+        var t = 10.dp
         change.setOnClickListener {
-            gameView.one = 10.dp
-            gameView.seven = 10.dp
+
+            /*repeat(7) {
+                gameView.pointY[it] = t
+                t += 1.dp
+            }
+            gameView.invalidate()*/
+            gameView.pointY[0] = 10.dp
+            gameView.pointY[1] = 21.dp
+            gameView.pointY[2] = 12.dp
+            gameView.pointY[3] = 15.dp
+            gameView.pointY[4] = 23.dp
+            gameView.pointY[5] = 30.dp
+            gameView.pointY[6] = 36.dp
+            gameView.invalidate()
         }
 
     }
